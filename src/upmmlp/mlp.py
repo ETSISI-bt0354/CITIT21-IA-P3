@@ -3,6 +3,9 @@ import numpy as np
 import numpy.typing as npt
 from sklearn.preprocessing import MinMaxScaler
 
+from src import layer as ly
+
+
 def train_and_test(dataset, seed=0, learning_rate=.0, hidden_size=0, hidden_num=0):
     """
     Returns the test metric after training with a partition of the dataset
@@ -30,7 +33,32 @@ def train_and_test(dataset, seed=0, learning_rate=.0, hidden_size=0, hidden_num=
     # 4. Test the network
 
     train, test, validation = partition(dataset, 0.9, 0.05, 0.05)
-    return len(train) + len(test) + len(validation)
+    aux = []
+
+    network = []
+    if (hidden_num >= 1):
+        network.append(ly.layer(train.shape[1] - 1, hidden_size))
+
+    for _ in range(hidden_num - 1):
+        network.append(ly.layer(hidden_size, hidden_size))
+
+    network.append(ly.layer(hidden_size, 1))
+
+    best_f1_score = 0
+    cyces_without_improvement = 0
+    while cyces_without_improvement < 5:
+        train_epoch(train, network, learning_rate)
+        current_f1_score = validation_epoch(validation, network)
+        aux.append(current_f1_score)
+
+        if current_f1_score > best_f1_score:
+            best_f1_score = current_f1_score
+            cyces_without_improvement = 0
+        else:
+            cyces_without_improvement += 1
+
+    return aux
+
 
 
 def partition(data: pd.DataFrame, train_percentage: float, test_percentage: float, validation_percentage: float) -> tuple[npt.NDArray[float], npt.NDArray[float], npt.NDArray[float]]:
@@ -67,3 +95,58 @@ def partition(data: pd.DataFrame, train_percentage: float, test_percentage: floa
     rng.shuffle(validation)
 
     return train, test, validation
+
+def loss_function(expected_value: npt.NDArray, network_output: npt.NDArray) -> npt.NDArray:
+    return expected_value - network_output
+
+def full_foward_propagation(input, network: list[ly.layer]):
+    Y = [input]
+    for layer in network:
+        input = layer.foward_propagation(input)
+        Y.append(input)
+
+    return Y
+
+def train_step(input, network, learning_rate):
+    Y = full_foward_propagation(input[1:], network)
+
+    loss = loss_function(input[0], Y[-1])
+
+    deltas = []
+    for index, layer in enumerate(reversed(network)):
+        index = len(network) - index - 1
+        gradient = ly.gradient(loss, Y[index + 1])
+
+        deltas.append(layer.backward_propagation(gradient, Y[index], learning_rate))
+
+        loss = np.dot(gradient, np.atleast_2d(layer.weight).T)
+
+    for layer, (delta_weight, delta_bias) in zip(network, reversed(deltas)):
+        layer.weight += delta_weight
+        layer.bias += delta_bias
+def train_epoch(train_data, network, learning_rate):
+    for row in train_data:
+        train_step(row, network, learning_rate)
+
+def validation_epoch(validation_data, network) -> float:
+    confusion_matrix = [[0, 0], [0, 0]]
+
+    for row in validation_data:
+        probability = full_foward_propagation(row[1:], network)[-1]
+        prediction = round(probability)
+
+        confusion_matrix[int(row[0])][prediction] += 1
+
+    return F1_score(confusion_matrix[1][1], confusion_matrix[0][1], confusion_matrix[1][0])
+
+def F1_score(true_positive: int, false_positive: int, false_negative: int) -> float:
+    p = precision(true_positive, false_positive)
+    r = recall(true_positive, false_negative)
+
+    return 2 * p * r / (p + r)
+
+def precision(true_positive: int, false_positive: int) -> float:
+    return true_positive / (true_positive + false_positive)
+
+def recall(true_positive: int, false_negative: int) -> float:
+    return true_positive / (true_positive + false_negative)
