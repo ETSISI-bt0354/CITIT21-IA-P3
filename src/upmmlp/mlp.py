@@ -157,7 +157,7 @@ def validation_epoch(validation_data, network) -> float:
     network_input = validation_data[:, 1:]
 
     for layer in network:
-        network_input = sigmoid(np.dot(network_input, layer.weight) + layer.bia)
+        network_input = sigmoid(np.dot(network_input, layer.weight) + layer.bias)
 
     for result, prediction in zip(validation_data[:, 0], network_input):
         confusion_matrix[int(result)][round(prediction.item())] += 1
