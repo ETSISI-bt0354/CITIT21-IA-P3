@@ -100,7 +100,11 @@ Miguel Ángel Serrano
 \end_layout
 
 \begin_layout Date
-5 de Enero de 2024 [TBD]
+7 de Enero de 2024
+\begin_inset Newline newline
+\end_inset
+
+Universidad Politécnica de Madrid
 \end_layout
 
 \begin_layout Abstract
@@ -221,7 +225,7 @@ Burgos Sánchez
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.33%
+1/3
 \end_layout
 
 \end_inset
@@ -268,7 +272,7 @@ Benjumea Burillo
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.33%
+1/3
 \end_layout
 
 \end_inset
@@ -315,7 +319,7 @@ Serrano Sánchez
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.33%
+1/3
 \end_layout
 
 \end_inset
@@ -353,9 +357,47 @@ Aprendizaje
 \end_layout
 
 \begin_layout Standard
-Adjunta una gráfica de la evolución del F1-Score en entrenamiento y validación
- para el modelo con mejor error de test obtenido en cualquier experimento.
- Se recomiendo usar la librería matplotlib
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename test-validation-f1-score.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo con 1 capa oculta, 5 neuronas y 0.1 de razón de aprendizaje
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -381,13 +423,21 @@ framecolor "black"
 backgroundcolor "none"
 status open
 
-\begin_layout Plain Layout
--> Todos los experimentos se han realizado con un seed = 10
+\begin_layout Itemize
+Todos los experimentos se han realizado con un seed = 10
 \end_layout
 
-\begin_layout Plain Layout
--> Todas las celdas que no tengan valor es porque no se ha conseguido que
- terminen 
+\begin_layout Itemize
+Todas las celdas que no tengan valor es porque no se ha conseguido que terminen
+ (DNF)
+\end_layout
+
+\begin_layout Itemize
+Las celdas de color 
+\color red
+rojo
+\color inherit
+ han sido ejecutadas con un Batch Size = 128
 \end_layout
 
 \end_inset
@@ -531,7 +581,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.372011251758 
+
+\family typewriter
+0.372011251758
 \end_layout
 
 \end_inset
@@ -540,7 +592,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.411690760527 
+
+\family typewriter
+0.373108060542
 \end_layout
 
 \end_inset
@@ -549,6 +603,8 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family typewriter
 0.244550550134
 \end_layout
 
@@ -558,6 +614,8 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family typewriter
 0.244550550134
 \end_layout
 
@@ -578,6 +636,8 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family typewriter
 0.304868316041
 \end_layout
 
@@ -587,7 +647,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.374607603767 
+
+\family typewriter
+0.374607603767
 \end_layout
 
 \end_inset
@@ -596,7 +658,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244550550134 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -605,7 +669,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244550550134 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -626,6 +692,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.237588652482
 \end_layout
 
 \end_inset
@@ -634,6 +703,8 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family typewriter
 0.251845419018
 \end_layout
 
@@ -643,7 +714,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244550550134 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -652,7 +725,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244550550134 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -673,6 +748,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.191768007483
 \end_layout
 
 \end_inset
@@ -681,6 +759,8 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family typewriter
 0.244550550134
 \end_layout
 
@@ -690,7 +770,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244550550134 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -699,7 +781,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244550550134 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -709,10 +793,6 @@ Razón de Aprendizaje
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -736,6 +816,13 @@ Cuando la capa oculta tiene 20 o más neuronas, parece que la red es incapaz
 precision
 \shape default
  realiza una división por 0.
+ 
+\end_layout
+
+\begin_layout Standard
+También se puede observar que una razón de aprendizaje menor o igual a 0.001
+ perjudica el rendimiento de la red.
+ Esto se puede deber a que se quede en un mínimo local.
  
 \end_layout
 
@@ -910,7 +997,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.2445505501349 
+
+\family typewriter
+0.2445505501349
 \end_layout
 
 \end_inset
@@ -919,7 +1008,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244550550134 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -957,7 +1048,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.2445505501349 
+
+\family typewriter
+0.2445505501349
 \end_layout
 
 \end_inset
@@ -966,7 +1059,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244550550134 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1005,6 +1100,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.2445505501349
 \end_layout
 
 \end_inset
@@ -1014,6 +1112,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1052,6 +1153,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.2445505501349
 \end_layout
 
 \end_inset
@@ -1061,6 +1165,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1070,10 +1177,6 @@ Razón de Aprendizaje
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1246,7 +1349,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244550550134 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1255,7 +1360,9 @@ Razón de Aprendizaje
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.244655088908 
+
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1294,6 +1401,8 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1303,6 +1412,8 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1341,6 +1452,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1350,6 +1464,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1388,6 +1505,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1397,6 +1517,9 @@ Razón de Aprendizaje
 
 \begin_layout Plain Layout
 
+\family typewriter
+\color red
+0.244550550134
 \end_layout
 
 \end_inset
@@ -1482,6 +1605,25 @@ Cabe destacar que, con el cambio de realizar la pasada de entrenamiento
  con 128 muestras simultáneamente, se mejora mucho el rendimiento y no parece
  afectar a la F1 score, por lo que recomendamos usarlo.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+[PÁGINA DEJADA INTENCIONALMENTE EN BLANCO]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \end_body
